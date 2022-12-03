@@ -4,8 +4,7 @@ import (
 	"syscall"
 )
 
-func dllImport(functionName string) *syscall.LazyProc {
-	dllPath := ".\\cshis.dll"
+func dllImport(dllPath string ,functionName string) *syscall.LazyProc {
 	handle := syscall.NewLazyDLL(dllPath)
 	dllLib := handle.NewProc(functionName)
 	return dllLib
